@@ -302,6 +302,14 @@ class CardBINRange {
         return String.format("%1$-" + n + "s", s).replace(" ", DEFAULT_PAD);
     }
 
+    CardBrand getCardBrand() {
+        return cardBrand;
+    }
+
+    int[] getCardNumberLengths() {
+        return cardNumberLengths;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this) {
