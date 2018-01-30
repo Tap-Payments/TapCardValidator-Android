@@ -294,12 +294,10 @@ class CardBINRange {
         return selfLow <= low && selfHigh >= high;
     }
 
-    private static String padLeft(String s, int n) {
-        return String.format("%1$" + n + "s", s).replace(" ", DEFAULT_PAD);
-    }
-
     private static String padRight(String s, int n) {
-        return String.format("%1$-" + n + "s", s).replace(" ", DEFAULT_PAD);
+        return s.length() == n ?
+                s : s.length() > n ?
+                s.substring(0, n) : String.format("%1$-" + n + "s", s).replace(" ", DEFAULT_PAD);
     }
 
     CardBrand getCardBrand() {
