@@ -3,6 +3,7 @@ package company.tap.tapcardvalidator_android;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedHashSet;
 
 /**
@@ -117,7 +118,7 @@ class CardBINRange {
     }
 
     static CardBINRange mostSpecific(String number, ArrayList<CardBrand> preferredBrands) {
-        ArrayList<CardBrand> nonnullPreferredBrands = preferredBrands == null ? new ArrayList<>() : preferredBrands;
+        final ArrayList<CardBrand> nonnullPreferredBrands = preferredBrands == null ? new ArrayList<CardBrand>() : preferredBrands;
         boolean preferredBrandsAreNotEmpty = nonnullPreferredBrands.size() > 0;
 
         ArrayList<CardBINRange> possibleRanges = new ArrayList<>();
@@ -147,7 +148,12 @@ class CardBINRange {
         if (possibleRangesWithMostCloseRangeLengthFromLeft.size() > 0) {
             ArrayList<CardBINRange> sortedByLengthPossibleRanges = new ArrayList<>();
             sortedByLengthPossibleRanges.addAll(possibleRangesWithMostCloseRangeLengthFromLeft);
-            Collections.sort(sortedByLengthPossibleRanges, (t0, t1) -> t0.lowerRange.length() == t1.lowerRange.length() ? 0 : t0.lowerRange.length() < t1.lowerRange.length() ? 1 : -1);
+            Collections.sort(sortedByLengthPossibleRanges, new Comparator<CardBINRange>() {
+                @Override
+                public int compare(CardBINRange t0, CardBINRange t1) {
+                    return t0.lowerRange.length() == t1.lowerRange.length() ? 0 : t0.lowerRange.length() < t1.lowerRange.length() ? 1 : -1;
+                }
+            });
 
             int maxLength = sortedByLengthPossibleRanges.get(0).lowerRange.length();
 
@@ -160,18 +166,21 @@ class CardBINRange {
 
             ArrayList<CardBINRange> sortedMaxLengthRanges = new ArrayList<>();
             sortedMaxLengthRanges.addAll(allMaxLengthRanges);
-            Collections.sort(sortedMaxLengthRanges, (t0, t1) -> {
-                int t0Index = nonnullPreferredBrands.indexOf(t0.cardBrand);
-                int t1Index = nonnullPreferredBrands.indexOf(t1.cardBrand);
+            Collections.sort(sortedMaxLengthRanges, new Comparator<CardBINRange>() {
+                @Override
+                public int compare(CardBINRange t0, CardBINRange t1) {
+                    int t0Index = nonnullPreferredBrands.indexOf(t0.cardBrand);
+                    int t1Index = nonnullPreferredBrands.indexOf(t1.cardBrand);
 
-                if (t0Index == -1) {
-                    t0Index = nonnullPreferredBrands.size() + 1;
-                }
-                if (t1Index == -1) {
-                    t1Index = nonnullPreferredBrands.size() + 1;
-                }
+                    if (t0Index == -1) {
+                        t0Index = nonnullPreferredBrands.size() + 1;
+                    }
+                    if (t1Index == -1) {
+                        t1Index = nonnullPreferredBrands.size() + 1;
+                    }
 
-                return t0Index == t1Index ? 0 : t0Index > t1Index ? 1 : -1;
+                    return t0Index == t1Index ? 0 : t0Index > t1Index ? 1 : -1;
+                }
             });
 
             return sortedMaxLengthRanges.get(0);
@@ -187,7 +196,12 @@ class CardBINRange {
         if (possibleRangesWithMostCloseRangeLengthFromRight.size() > 0) {
             ArrayList<CardBINRange> sortedByLengthPossibleRanges = new ArrayList<>();
             sortedByLengthPossibleRanges.addAll(possibleRangesWithMostCloseRangeLengthFromRight);
-            Collections.sort(sortedByLengthPossibleRanges, (t0, t1) -> t0.lowerRange.length() == t1.lowerRange.length() ? 0 : t0.lowerRange.length() > t1.lowerRange.length() ? 1 : -1);
+            Collections.sort(sortedByLengthPossibleRanges, new Comparator<CardBINRange>() {
+                @Override
+                public int compare(CardBINRange t0, CardBINRange t1) {
+                    return t0.lowerRange.length() == t1.lowerRange.length() ? 0 : t0.lowerRange.length() > t1.lowerRange.length() ? 1 : -1;
+                }
+            });
 
             int minLength = sortedByLengthPossibleRanges.get(0).lowerRange.length();
 
@@ -200,18 +214,21 @@ class CardBINRange {
 
             ArrayList<CardBINRange> sortedMinLengthRanges = new ArrayList<>();
             sortedMinLengthRanges.addAll(allMinLengthRanges);
-            Collections.sort(sortedMinLengthRanges, (t0, t1) -> {
-                int t0Index = nonnullPreferredBrands.indexOf(t0.cardBrand);
-                int t1Index = nonnullPreferredBrands.indexOf(t1.cardBrand);
+            Collections.sort(sortedMinLengthRanges, new Comparator<CardBINRange>() {
+                @Override
+                public int compare(CardBINRange t0, CardBINRange t1) {
+                    int t0Index = nonnullPreferredBrands.indexOf(t0.cardBrand);
+                    int t1Index = nonnullPreferredBrands.indexOf(t1.cardBrand);
 
-                if (t0Index == -1) {
-                    t0Index = nonnullPreferredBrands.size() + 1;
-                }
-                if (t1Index == -1) {
-                    t1Index = nonnullPreferredBrands.size() + 1;
-                }
+                    if (t0Index == -1) {
+                        t0Index = nonnullPreferredBrands.size() + 1;
+                    }
+                    if (t1Index == -1) {
+                        t1Index = nonnullPreferredBrands.size() + 1;
+                    }
 
-                return t0Index == t1Index ? 0 : t0Index > t1Index ? 1 : -1;
+                    return t0Index == t1Index ? 0 : t0Index > t1Index ? 1 : -1;
+                }
             });
 
             return sortedMinLengthRanges.get(0);
