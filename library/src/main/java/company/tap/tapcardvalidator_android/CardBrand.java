@@ -11,33 +11,42 @@ import com.google.gson.annotations.SerializedName;
 // Card Brand.
 public enum CardBrand {
 
-    @SerializedName("aiywaLoyalty") aiywaLoyalty,
-    @SerializedName(value = "AMEX", alternate = {"AMERICAN_EXPRESS"}) americanExpress,
-    @SerializedName("BENEFIT") benefit,
-    @SerializedName("CARDGUARD") cardGuard,
-    @SerializedName("CBK") cbk,
-    @SerializedName("DANKORT") dankort,
-    @SerializedName("DISCOVER") discover,
-    @SerializedName(value = "DINERS_CLUB", alternate = {"DINERS"}) dinersClub,
-    @SerializedName("FAWRY") fawry,
-    @SerializedName("INSTAPAY") instaPayment,
-    @SerializedName("INTERPAY") interPayment,
-    @SerializedName("JCB") jcb,
-    @SerializedName("KNET") knet,
-    @SerializedName("MADA") mada,
-    @SerializedName("MAESTRO") maestro,
-    @SerializedName("MASTERCARD") masterCard,
-    @SerializedName("NAPS") naps,
-    @SerializedName("NSPK") nspkMir,
-    @SerializedName("OMAN_NET") omanNet,
-    @SerializedName("SADAD_ACCOUNT") sadad,
-    @SerializedName("TAP") tap,
-    @SerializedName("UATP") uatp,
-    @SerializedName(value = "UNION_PAY", alternate = {"UNIONPAY"}) unionPay,
-    @SerializedName("VERVE") verve,
-    @SerializedName("VISA") visa,
-    @SerializedName("Viva PAY") viva,
-    @SerializedName("Wataniya PAY") wataniya,
-    @SerializedName("Zain PAY") zain,
-    @SerializedName("") unknown
+    @SerializedName("aiywaLoyalty")                                     aiywaLoyalty("aiywaLoyalty"),
+    @SerializedName(value = "AMEX", alternate = {"AMERICAN_EXPRESS"})   americanExpress("AMEX"),
+    @SerializedName("BENEFIT")                                          benefit("BENEFIT"),
+    @SerializedName("CARDGUARD")                                        cardGuard("CARDGUARD"),
+    @SerializedName("CBK")                                              cbk("CBK"),
+    @SerializedName("DANKORT")                                          dankort("DANKORT"),
+    @SerializedName("DISCOVER")                                         discover("DISCOVER"),
+    @SerializedName(value = "DINERS_CLUB", alternate = {"DINERS"})      dinersClub("DINERS_CLUB"),
+    @SerializedName("FAWRY")                                            fawry("FAWRY"),
+    @SerializedName("INSTAPAY")                                         instaPayment("INSTAPAY"),
+    @SerializedName("INTERPAY")                                         interPayment("INTERPAY"),
+    @SerializedName("JCB")                                              jcb("JCB"),
+    @SerializedName("KNET")                                             knet("KNET"),
+    @SerializedName("MADA")                                             mada("MADA"),
+    @SerializedName("MAESTRO")                                          maestro("MAESTRO"),
+    @SerializedName("MASTERCARD")                                       masterCard("MASTERCARD"),
+    @SerializedName("NAPS")                                             naps("NAPS"),
+    @SerializedName("NSPK")                                             nspkMir("NSPK"),
+    @SerializedName("OMAN_NET")                                         omanNet("OMAN_NET"),
+    @SerializedName("SADAD_ACCOUNT")                                    sadad("SADAD_ACCOUNT"),
+    @SerializedName("TAP")                                              tap("TAP"),
+    @SerializedName("UATP")                                             uatp("UATP"),
+    @SerializedName(value = "UNION_PAY", alternate = {"UNIONPAY"})      unionPay("UNION_PAY"),
+    @SerializedName("VERVE")                                            verve("VERVE"),
+    @SerializedName("VISA")                                             visa("VISA"),
+    @SerializedName("Viva PAY")                                         viva("Viva PAY"),
+    @SerializedName("Wataniya PAY")                                     wataniya("Wataniya PAY"),
+    @SerializedName("Zain PAY")                                         zain("Zain PAY"),
+    @SerializedName("")                                                 unknown("");
+
+
+    private String rawValue;
+    CardBrand(String rawValue) {
+
+        this.rawValue = rawValue;
+    }
+
+    public String getRawValue() { return rawValue; }
 }
