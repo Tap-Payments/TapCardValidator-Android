@@ -40,6 +40,7 @@ public enum CardBrand {
     @SerializedName("Viva PAY")                                         viva("Viva PAY"),
     @SerializedName("Wataniya PAY")                                     wataniya("Wataniya PAY"),
     @SerializedName("Zain PAY")                                         zain("Zain PAY"),
+    @SerializedName("Ooredoo PAY")                                      ooredoo("Ooredoo PAY"),
     @SerializedName("")                                                 unknown("");
 
 
@@ -50,4 +51,13 @@ public enum CardBrand {
     }
 
     public String getRawValue() { return rawValue; }
+
+    public static CardBrand fromString(String text) {
+        for (CardBrand brand : CardBrand.values()) {
+            if (brand.rawValue.equalsIgnoreCase(text)) {
+                return brand;
+            }
+        }
+        throw new IllegalArgumentException("No constant with raw value " + text + " found");
+    }
 }
