@@ -41,8 +41,8 @@ public enum CardBrand {
     @SerializedName("Wataniya PAY")                                     wataniya("Wataniya PAY"),
     @SerializedName("Zain PAY")                                         zain("Zain PAY"),
     @SerializedName("Ooredoo PAY")                                      ooredoo("Ooredoo PAY"),
-    @SerializedName("Tabby - Pay Later")                                tabbypaylater("Tabby - Pay Later"),
-    @SerializedName("Tabby - 3 Installments")                          tabbypayinstallments("Tabby - 3 Installments"),
+    @SerializedName("Pay later with Tabby")                             tabbypaylater("Pay later with Tabby"),
+    @SerializedName("Pay in Installments with Tabby")                    tabbypayinstallments("Pay in Installments with Tabby"),
     @SerializedName("")                                                 unknown("");
 
 
