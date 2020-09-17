@@ -41,8 +41,14 @@ public enum CardBrand {
     @SerializedName("Wataniya PAY")                                     wataniya("Wataniya PAY"),
     @SerializedName("Zain PAY")                                         zain("Zain PAY"),
     @SerializedName("Ooredoo PAY")                                      ooredoo("Ooredoo PAY"),
+    @SerializedName("Tabby - Pay Later")                                tabbypaylater("Tabby - Pay Later"),
+    @SerializedName("Tabby - 3 Installments")                          tabbypayinstallments("Tabby - 3 Installments"),
     @SerializedName("")                                                 unknown("");
 
+
+    public void setRawValue(String rawValue) {
+        this.rawValue = rawValue;
+    }
 
     private String rawValue;
     CardBrand(String rawValue) {
