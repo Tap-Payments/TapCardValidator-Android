@@ -72,9 +72,13 @@ class CardBINRange {
         allRanges.add(new CardBINRange("2131"  , "2131"  , new int[]{16, 17, 18, 19}                , CardBrand.jcb));
         allRanges.add(new CardBINRange("3528"  , "3589"  , new int[]{16, 17, 18, 19}                , CardBrand.jcb));
 
-        allRanges.add(new CardBINRange("50"    , "50"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.maestro));
+        //changed from maestro to master card as in IOS
+      /*  allRanges.add(new CardBINRange("50"    , "50"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.maestro));
         allRanges.add(new CardBINRange("56"    , "64"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.maestro));
-        allRanges.add(new CardBINRange("66"    , "69"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.maestro));
+        allRanges.add(new CardBINRange("66"    , "69"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.maestro));*/
+        allRanges.add(new CardBINRange("50"    , "50"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.masterCard));
+        allRanges.add(new CardBINRange("56"    , "64"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.masterCard));
+        allRanges.add(new CardBINRange("66"    , "69"    , new int[]{12, 13, 14, 15, 16, 17, 18, 19}, CardBrand.masterCard));
 
         allRanges.add(new CardBINRange("5019"  , "5019"  , new int[]{16}                            , CardBrand.dankort));
         allRanges.add(new CardBINRange("4175"  , "4175"  , new int[]{16}                            , CardBrand.dankort));
