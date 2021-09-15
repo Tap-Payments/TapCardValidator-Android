@@ -44,6 +44,7 @@ public enum CardBrand {
     @SerializedName("Pay later with Tabby")                             tabbypaylater("Pay later with Tabby"),
     @SerializedName("Pay in Installments with Tabby")                   tabbypayinstallments("Pay in Installments with Tabby"),
     @SerializedName("MEEZA")                                             meeza("MEEZA"),
+    @SerializedName("VISA_ELECTRON")                                    visaElectron("VISA_ELECTRON"),
     @SerializedName("")                                                 unknown("");
 
 
