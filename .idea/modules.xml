@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< Updated upstream
-      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-TapCardValidator-Android.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-TapCardValidator-Android.iml" group="TapCardValidator-Android" />
-      <module fileurl="file://$PROJECT_DIR$/TapCardValidator-Android.iml" filepath="$PROJECT_DIR$/TapCardValidator-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/TapCardValidator-Android-library.iml" filepath="$PROJECT_DIR$/library/TapCardValidator-Android-library.iml" group="TapCardValidator-Android/library" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/TapCardValidator.iml" filepath="$PROJECT_DIR$/TapCardValidator.iml" group="TapCardValidator" />
-      <module fileurl="file://$PROJECT_DIR$/TapCardValidator-Android.iml" filepath="$PROJECT_DIR$/TapCardValidator-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/TapCardValidator-library.iml" filepath="$PROJECT_DIR$/library/TapCardValidator-library.iml" group="TapCardValidator/library" />
->>>>>>> Stashed changes
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TapCardValidator-Android.iml" filepath="$PROJECT_DIR$/.idea/TapCardValidator-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/TapCardValidator-Android.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/TapCardValidator-Android.library.iml" />
     </modules>
   </component>
 </project>
