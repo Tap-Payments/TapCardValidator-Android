@@ -47,6 +47,8 @@ public enum CardBrand {
     @SerializedName("VISA_ELECTRON")                                    visaElectron("VISA_ELECTRON"),
     @SerializedName("Careem Pay")                                        careemPay("Careem Pay"),
     @SerializedName("Google Pay")                                        googlePay("Google Pay"),
+    @SerializedName("PayPal")                                        payPal("PayPal"),
+    @SerializedName("PostPal")                                        postPal("PostPal"),
     @SerializedName("")                                                 unknown("");
 
 
