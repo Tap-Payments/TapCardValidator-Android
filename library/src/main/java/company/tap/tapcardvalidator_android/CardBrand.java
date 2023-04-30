@@ -29,7 +29,7 @@ public enum CardBrand {
     @SerializedName("MASTERCARD")                                       masterCard("MASTERCARD"),
     @SerializedName("NAPS")                                             naps("NAPS"),
     @SerializedName("NSPK")                                             nspkMir("NSPK"),
-    @SerializedName(value = "OMAN_NET", alternate = {"OMANNET"})        omanNet("OMAN_NET"),
+    @SerializedName(value = "OMANNET", alternate = {"OMAN_NET"})        omanNet("OMAN_NET"),
     @SerializedName("STC_PAY")                                          stcPay("STC_PAY"),
     @SerializedName("SADAD_ACCOUNT")                                    sadad("SADAD_ACCOUNT"),
     @SerializedName("TAP")                                              tap("TAP"),
