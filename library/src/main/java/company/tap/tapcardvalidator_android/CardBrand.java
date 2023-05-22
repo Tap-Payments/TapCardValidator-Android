@@ -12,7 +12,7 @@ import com.google.gson.annotations.SerializedName;
 public enum CardBrand {
 
     @SerializedName("aiywaLoyalty")                                     aiywaLoyalty("aiywaLoyalty"),
-    @SerializedName(value = "AMERICAN_EXPRESS", alternate = {"AMEX"})   americanExpress("AMERICAN_EXPRESS"),
+    @SerializedName(value = "AMERICAN_EXPRESS", alternate = {"AMEX"})   americanExpress("AMERICANEXPRESS"),
     @SerializedName("BENEFIT")                                          benefit("BENEFIT"),
     @SerializedName("CARDGUARD")                                        cardGuard("CARDGUARD"),
     @SerializedName("CBK")                                              cbk("CBK"),
@@ -29,7 +29,7 @@ public enum CardBrand {
     @SerializedName("MASTERCARD")                                       masterCard("MASTERCARD"),
     @SerializedName("NAPS")                                             naps("NAPS"),
     @SerializedName("NSPK")                                             nspkMir("NSPK"),
-    @SerializedName(value = "OMANNET", alternate = {"OMAN_NET"})        omanNet("OMAN_NET"),
+    @SerializedName(value = "OMANNET", alternate = {"OMAN_NET"})        omanNet("OMANNET"),
     @SerializedName("STC_PAY")                                          stcPay("STC_PAY"),
     @SerializedName("SADAD_ACCOUNT")                                    sadad("SADAD_ACCOUNT"),
     @SerializedName("TAP")                                              tap("TAP"),
