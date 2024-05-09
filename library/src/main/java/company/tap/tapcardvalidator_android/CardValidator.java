@@ -94,7 +94,7 @@ public class CardValidator {
                 return 0;
             }else {
                // return  Collections.max(Arrays.asList(dummy));
-                return  dummy[0];
+                return  arrayMax(dummy);
             }
         }
     }
