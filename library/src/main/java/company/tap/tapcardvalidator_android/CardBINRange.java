@@ -1,10 +1,15 @@
 package company.tap.tapcardvalidator_android;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * TapCardValidator
@@ -272,6 +277,17 @@ class CardBINRange {
         }
 
         return result;
+    }
+
+    @TargetApi(Build.VERSION_CODES.N)
+    public static List<CardBINRange> ranges(CardBrand brand) {
+        if (brand == null) {
+            return allRanges;
+        }
+
+        return allRanges.stream()
+                .filter(range -> range.getCardBrand().equals(brand))
+                .collect(Collectors.toList());
     }
 
     private boolean matches(String number) {
