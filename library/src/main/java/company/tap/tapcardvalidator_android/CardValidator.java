@@ -84,7 +84,7 @@ public class CardValidator {
     }
 
 
-    public int getCardLength(CardBrand cardBrand){
+    public  static int getCardLength(CardBrand cardBrand){
         List<CardBINRange> cardBINRanges = CardBINRange.ranges(cardBrand);
         if(cardBINRanges.isEmpty()){
             return 0;
