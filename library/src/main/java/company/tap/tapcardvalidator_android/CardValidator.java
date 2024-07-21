@@ -1,5 +1,8 @@
 package company.tap.tapcardvalidator_android;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 
@@ -78,6 +81,7 @@ public class CardValidator {
     }
 
 
+    @TargetApi(Build.VERSION_CODES.N)
     public  static int getCardLength(CardBrand cardBrand){
         List<CardBINRange> cardBINRanges = CardBINRange.ranges(cardBrand);
         if(cardBINRanges.isEmpty()){
@@ -88,7 +92,7 @@ public class CardValidator {
                 return 0;
             }else {
                // return  Collections.max(Arrays.asList(dummy));
-                return  arrayMax(dummy);
+                return  Arrays.stream(dummy).max().getAsInt();
             }
         }
     }
@@ -206,4 +210,29 @@ public class CardValidator {
 
         return value;
     }
+
+
+/*
+    @TargetApi(Build.VERSION_CODES.N)
+    public static int maximalCardNumberLength(CardBrand brand) {
+        List<CardBINRange> ranges = CardBINRange.ranges(brand);
+        return ranges.stream()
+                .flatMapToInt(range -> Arrays.stream(range.getCardNumberLengths()).asLongStream().mapToInt(Integer::intValue))
+                .max()
+                .orElse(0);
+    }
+*/
+
+
+  /*  @TargetApi(Build.VERSION_CODES.TIRAMISU)
+    public static int maximalCardNumberLength(CardBrand brand) {
+        List<CardBINRange> ranges = CardBINRange.ranges(brand);
+       // List<Integer> lengths = ranges.stream()
+              //  .flatMapToInt(range -> Arrays.stream(range.getCardNumberLengths()).max().stream()).collect()
+              //  .collect(Collectors.toList());
+       // OptionalInt max = lengths.stream().mapToInt(Integer::intValue).max();
+       // return max.orElse(0);
+    }*/
+
+
 }
