@@ -50,6 +50,9 @@ public enum CardBrand {
     @SerializedName("Google Pay")                                        googlePay("Google Pay"),
     @SerializedName("PayPal")                                        payPal("PayPal"),
     @SerializedName("PostPal")                                        postPal("PostPal"),
+    @SerializedName("SAMSUNGPAY")                                        SAMSUNGPAY("SAMSUNGPAY"),
+    @SerializedName("SAMSUNG_PAY")                                        SAMSUNG_PAY("SAMSUNG_PAY"),
+
     @SerializedName("")                                                 unknown("");
 
 
