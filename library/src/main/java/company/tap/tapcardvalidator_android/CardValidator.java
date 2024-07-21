@@ -77,6 +77,22 @@ public class CardValidator {
         }
     }
 
+
+    public int getCardLength(CardBrand cardBrand){
+        List<CardBINRange> cardBINRanges = CardBINRange.ranges(cardBrand);
+        if(cardBINRanges.isEmpty()){
+            return 0;
+        }else {
+            int[] dummy  = CardBINRange.ranges(cardBrand).get(0).getCardNumberLengths();
+            if (dummy.length == 0){
+                return 0;
+            }else {
+               // return  Collections.max(Arrays.asList(dummy));
+                return  arrayMax(dummy);
+            }
+        }
+    }
+
     /**
      * Returns correct visual spacings for a given card brand.
      *
